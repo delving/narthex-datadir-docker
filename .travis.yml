@@ -4,8 +4,8 @@ services:
   - docker
 
 script:
-  - docker build -t delvingplatform/narthex-data-initial .
+  - docker build -t delvingplatform/narthex-data-initial:1 .
 
 after_success:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push delvingplatform/narthex;
+    docker push delvingplatform/narthex-data-initial:1;
